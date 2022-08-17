@@ -1,4 +1,4 @@
-interface Transmission {
+interface ITransmission {
     speed: number;
 
     stop(): void;
@@ -14,4 +14,4 @@ interface Transmission {
     getSpeed(): number;
 }
 
-export { Transmission };
+export { ITransmission };

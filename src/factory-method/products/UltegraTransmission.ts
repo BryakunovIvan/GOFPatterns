@@ -1,9 +1,19 @@
-import { Transmission } from "./product";
+import { ITransmission } from "./ITransmission";
 
-class GRXTransmission implements Transmission {
+class UltegraTransmission implements ITransmission {
     speed = 0;
-    private name = 'GRXTransmission';
+    private name = 'Ultegra';
 
+    getName(): string {
+        return this.name;
+    }
+
+    getSpeed(): number {
+        return this.speed
+    };
+
+    // Пример логики в продукте
+    
     stop() {
         console.log('Stop');
     };
@@ -23,14 +33,6 @@ class GRXTransmission implements Transmission {
     downFrontSpeed(): void {
         console.log('downFrontSpeed');
     };
-
-    getName(): string {
-        return this.name;
-    }
-
-    getSpeed(): number {
-        return this.speed
-    };
 }
 
-export { GRXTransmission }; 
+export { UltegraTransmission };
