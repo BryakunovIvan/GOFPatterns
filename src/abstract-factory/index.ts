@@ -1,28 +1,15 @@
-import { IBicycleFactory } from "./factory/bicycle-factory";
+import { Client } from "./Client";
 import { CannondaleFactory } from "./factory/cannondale-factory";
 import { StelsFactory } from "./factory/stels-factory";
-
-import { Frame } from "./product/frame";
-import { Wheel } from "./product/wheel";
-
-type TBicycle = {
-    wheel: Wheel;
-    frame: Frame;
-}
-
-const createBicycle = (factory: IBicycleFactory): TBicycle => {
-    return { wheel: factory.createWheel(), frame: factory.createFrame() }
-}
-
-const paintBicycle = (bicycle: TBicycle) => {
-    bicycle.frame.paint();
-}
 
 const cannondaleFactory = new CannondaleFactory();
 const stelsFactory = new StelsFactory();
 
-const cannondaleBike = createBicycle(cannondaleFactory);
-const stelsBike = createBicycle(stelsFactory);
+const cannondaleClient = new Client(cannondaleFactory);
+const stelsClient = new Client(stelsFactory);
 
-paintBicycle(cannondaleBike);
-paintBicycle(stelsBike);
+const cannondaleBike = cannondaleClient.createBicycle();
+const stelsBike = stelsClient.createBicycle();
+
+cannondaleClient.paintBicycle(cannondaleBike);
+stelsClient.paintBicycle(stelsBike);
