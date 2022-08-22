@@ -3,13 +3,16 @@ import { IBicycleFactory } from './bicycle-factory';
 import { StelsFrame } from '../product/stels-frame';
 import { StelsWheel } from '../product/stels-wheel';
 
+import { Frame } from '../product/frame';
+import { Wheel } from '../product/wheel';
+
 
 class StelsFactory implements IBicycleFactory {
-    createFrame(): StelsFrame {
+    createFrame(): Frame {
         return new StelsFrame();
     }
 
-    createWheel(): StelsWheel {
+    createWheel(): Wheel {
         return new StelsWheel();
     }
 }
