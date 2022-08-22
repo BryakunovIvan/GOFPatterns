@@ -8,6 +8,7 @@ type TBicycle = {
     frame: Frame;
 }
 
+/** Имитирует логику работы клиентского кода. */
 export class Client {
     private factory: IBicycleFactory;
 
