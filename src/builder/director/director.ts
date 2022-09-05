@@ -1,5 +1,8 @@
 import { IBuilder } from "../builder/builder";
-
+/**
+ * Класс директор
+ * Определяет порядок шагов билдеров для создания того или иного продукта.
+ */
 class Director {
     buildDefaultHouse(builder: IBuilder) {
         builder.reset();
