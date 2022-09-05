@@ -5,16 +5,13 @@ import { Director } from "./director/director";
 const houseBuilder = new HouseBuilder();
 const housePlanBuilder = new HousePlanBuilder();
 
-const director = new Director(houseBuilder);
+const director = new Director();
 
-const defaultHouse = director.buildDefaultHouse();
-director.setBuilder(housePlanBuilder);
-const defaultHousePlan = director.buildDefaultHouse();
+const defaultHouse = director.buildDefaultHouse(houseBuilder);
+const defaultHousePlan = director.buildDefaultHouse(housePlanBuilder);
 
-director.setBuilder(houseBuilder);
-const houseWithManyWindow = director.buildHouseWithManyWindow();
-director.setBuilder(housePlanBuilder)
-const housePlanWithManyWindow = director.buildHouseWithManyWindow();
+const houseWithManyWindow = director.buildHouseWithManyWindow(houseBuilder);
+const housePlanWithManyWindow = director.buildHouseWithManyWindow(housePlanBuilder);
 
 
 
